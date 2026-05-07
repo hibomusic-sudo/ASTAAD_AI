@@ -499,7 +499,7 @@ class GeoGebraAnalysisTool(_PromptHintsMixin, BaseTool):
         )
 
 
-from deeptutor.plugins.ai_rage.tools import CommunityLinksTool
+from deeptutor.plugins.ai_rage.tools import GetDailyLessonTool
 
 BUILTIN_TOOL_TYPES: tuple[type[BaseTool], ...] = (
     BrainstormTool,
@@ -511,7 +511,7 @@ BUILTIN_TOOL_TYPES: tuple[type[BaseTool], ...] = (
     GeoGebraAnalysisTool,
     ScheduleTool,
     ClassworkTool,
-    CommunityLinksTool,
+    GetDailyLessonTool,
 )
 
 BUILTIN_TOOL_NAMES: tuple[str, ...] = tuple(tool_type().name for tool_type in BUILTIN_TOOL_TYPES)
@@ -537,5 +537,5 @@ __all__ = [
     "WebSearchTool",
     "ScheduleTool",
     "ClassworkTool",
-    "CommunityLinksTool",
+    "GetDailyLessonTool",
 ]

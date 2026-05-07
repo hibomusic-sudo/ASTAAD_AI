@@ -398,15 +398,54 @@ class TelegramChannel(BaseChannel):
             
             # Extract and build Telegram ReplyMarkup if present in metadata
             reply_markup_dict = msg.metadata.get("reply_markup")
-            if reply_markup_dict and "inline_keyboard" in reply_markup_dict:
-                from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-                keyboard = [
-                    [InlineKeyboardButton(text=btn["text"], url=btn.get("url"), callback_data=btn.get("callback_data")) for btn in row]
-                    for row in reply_markup_dict["inline_keyboard"]
-                ]
+            
+            # --- MAGIC TRIGGER FOR AI RAGE NATIVE BUTTONS ---
+            if "[SHOW_COMMUNITY_LINKS]" in msg.content:
+                msg.content = msg.content.replace("[SHOW_COMMUNITY_LINKS]", "").strip()
+                reply_markup_dict = {
+                    "inline_keyboard": [
+                        [{"text": "🤖 AI BOT (Automation) 4 Days", "url": "https://chat.whatsapp.com/KzkcjwraeYhCsUXaexgNyM"}],
+                        [{"text": "🌍 AI-Whatsapp Community", "url": "https://chat.whatsapp.com/DIu9h23H5R28ozxfMFTkdq"}],
+                        [{"text": "🎬 AI Video Editing", "url": "https://chat.whatsapp.com/DIu9h23H5R28ozxfMFTkdq"}],
+                        [{"text": "📚 Fasalka Barashada AI", "url": "https://chat.whatsapp.com/CEDDPttA5a4K6ZkQsDp4ah"}],
+                        [{"text": "📹 Loom Workspace (Nala Shaqee)", "url": "https://loom.com/invite/f510cb6235b947838f247150307bfbeb"}],
+                        [
+                            {"text": "🎵 Himbomusic", "url": "https://himbomusic.com"},
+                            {"text": "🔬 Somalilab", "url": "https://somalilab.com"}
+                        ],
+                        [{"text": "🌐 Somalibotmaster", "url": "https://somalibotmaster.net"}]
+                    ]
+                }
+                
+            if "[SHOW_MAIN_MENU]" in msg.content:
+                msg.content = msg.content.replace("[SHOW_MAIN_MENU]", "").strip()
+                reply_markup_dict = {
+                    "keyboard": [
+                        [{"text": "👨‍💻 Talk Human"}, {"text": "🤖 Talk Bot"}],
+                        [{"text": "🛂 Contacts"}, {"text": "❓ More Info"}],
+                        [{"text": "☘️ Ibara AI"}]
+                    ],
+                    "resize_keyboard": True
+                }
+            # ------------------------------------------------
+            
+            if reply_markup_dict:
                 if thread_kwargs is None:
                     thread_kwargs = {}
-                thread_kwargs["reply_markup"] = InlineKeyboardMarkup(keyboard)
+                if "inline_keyboard" in reply_markup_dict:
+                    from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+                    keyboard = [
+                        [InlineKeyboardButton(text=btn["text"], url=btn.get("url"), callback_data=btn.get("callback_data")) for btn in row]
+                        for row in reply_markup_dict["inline_keyboard"]
+                    ]
+                    thread_kwargs["reply_markup"] = InlineKeyboardMarkup(keyboard)
+                elif "keyboard" in reply_markup_dict:
+                    from telegram import KeyboardButton, ReplyKeyboardMarkup
+                    keyboard = [
+                        [KeyboardButton(btn["text"]) for btn in row]
+                        for row in reply_markup_dict["keyboard"]
+                    ]
+                    thread_kwargs["reply_markup"] = ReplyKeyboardMarkup(keyboard, resize_keyboard=reply_markup_dict.get("resize_keyboard", True))
 
             for chunk in split_message(msg.content, TELEGRAM_MAX_MESSAGE_LEN):
                 # Final response: simulate streaming via draft, then persist
@@ -477,11 +516,19 @@ class TelegramChannel(BaseChannel):
         if not update.message or not update.effective_user:
             return
 
+        from telegram import ReplyKeyboardMarkup, KeyboardButton
+        keyboard = [
+            [KeyboardButton("👨‍💻 Talk Human"), KeyboardButton("🤖 Talk Bot")],
+            [KeyboardButton("🛂 Contacts"), KeyboardButton("❓ More Info")],
+            [KeyboardButton("☘️ Ibara AI")]
+        ]
+        reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
         user = update.effective_user
         await update.message.reply_text(
-            f"👋 Hi {user.first_name}! I'm TutorBot.\n\n"
-            "Send me a message and I'll respond!\n"
-            "Type /help to see available commands."
+            f"👋 Soo dhawoo {user.first_name}!\n\n"
+            "Kusoo dhowoow AI Rage. Fadlan dooro mid ka mid ah xulashooyinka hoose:",
+            reply_markup=reply_markup
         )
 
     async def _on_help(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
