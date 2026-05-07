@@ -1,0 +1,142 @@
+{
+  "1": {
+    "title": "Maalinta 1aad: Hordhaca AI & Bot-yada",
+    "description": "Baro waxa uu yahay AI iyo sida loo isticmaalo Chatbots. Fahan aasaaska hore ee teknoolojiyadda.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "2": {
+    "title": "Maalinta 2aad: Dejinta Deegaankaaga (Environment Setup)",
+    "description": "Diyaari qalabka aad u baahan tahay. Samee account-yada muhiimka ah ee OpenAI iyo qalabka kale.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "3": {
+    "title": "Maalinta 3aad: Aasaaska Vibe Coding",
+    "description": "Waa maxay Vibe coding? Baro sida luqadda dabiiciga ah loogu beddelo koodh shaqeynaya.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "4": {
+    "title": "Maalinta 4aad: Prompt Engineering (Dhaqanka AI)",
+    "description": "Baro sida saxda ah ee AI su'aalo loo weydiiyo si aad u hesho natiijooyin sax ah.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "5": {
+    "title": "Maalinta 5aad: Hordhaca Automation-ka",
+    "description": "Fahan sida shaqooyinka maalinlaha ah looga dhigo kuwa iswada (Automated).",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "6": {
+    "title": "Maalinta 6aad: Ku xirida Apps-ka kala duwan",
+    "description": "Isticmaal Make ama Zapier si aad isugu xirto xogaha.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "7": {
+    "title": "Maalinta 7aad: Imtixaanka Toddobaadka 1aad",
+    "description": "Soo koobidda asbuuca iyo qiimeyn. Samee mashruuc yar oo tijaabo ah.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "8": {
+    "title": "Maalinta 8aad: Abuurista Chatbot-kaaga Koowaad",
+    "description": "Dhis bot fudud oo dadka u jawaaba adigoon koodh qorin.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "9": {
+    "title": "Maalinta 9aad: Maareynta Xogta Bot-ka (Knowledge Base)",
+    "description": "Sida bot-ka loogu shubo faylal PDF ah ama xog si uu wax uga ogaado.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "10": {
+    "title": "Maalinta 10aad: Ku Xirida WhatsApp iyo Bot-ka",
+    "description": "Cashar ku saabsan sida loo sameeyo Auto-reply Whatsapp ah.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "11": {
+    "title": "Maalinta 11aad: Video Editing - Hordhac",
+    "description": "Baro qalabka fiidiyowyada lagu gooyo lagulana falgalo.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "12": {
+    "title": "Maalinta 12aad: AI ku dhex jirta Video Editing",
+    "description": "Sida loo isticmaalo AI si loo abuuro Subtitles iyo muuqaalo soo jiidasho leh.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "13": {
+    "title": "Maalinta 13aad: Naqshadeynta Thumbnail-ka (Design)",
+    "description": "Samee sawiro cajiib ah adigoo isticmaalaya qalabka sawir sameynta ee AI.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "14": {
+    "title": "Maalinta 14aad: Imtixaanka Toddobaadka 2aad",
+    "description": "Soo koobid casharadii Chatbot-yada iyo Video Editing-ka.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "15": {
+    "title": "Maalinta 15aad: Mashruuca Dhexe - Dhismaha Nidaam Buuxa",
+    "description": "Isku xir bot-kaaga, xogtiisa, iyo automation-ka.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "16": {
+    "title": "Maalinta 16aad: Kobcinta Caqliga Bot-ka (Advanced RAG)",
+    "description": "Baro hababka horumarsan ee bot-ka looga dhigo mid aan khalad samayn.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "17": {
+    "title": "Maalinta 17aad: Maareynta Macaamiisha",
+    "description": "Sida Automation-ka loogu isticmaalo soo jiidashada iyo haynta macaamiisha.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "18": {
+    "title": "Maalinta 18aad: Qorista Koodhka Python ee Fudud",
+    "description": "Baro aasaaska Python ee ku caawinaya Automation-ka.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "19": {
+    "title": "Maalinta 19aad: API-yada (APIs) iyo Sida ay u shaqeeyaan",
+    "description": "Fahan sida nidaamyadu u wada xiriiraan adigoo isticmaalaya APIs.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "20": {
+    "title": "Maalinta 20aad: Ku Xirida AI-da Shabakadaha (Websites)",
+    "description": "Sida Chatbot loogu xiro Website-kaaga.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "21": {
+    "title": "Maalinta 21aad: Imtixaanka Toddobaadka 3aad",
+    "description": "Tijaabi mashaariicdaadii horumarsanaa.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "22": {
+    "title": "Maalinta 22aad: Cilad Saarka (Debugging) iyo Tayeynta",
+    "description": "Baro sida loo helo loona saxo qaladaadka nidaamyadaada.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "23": {
+    "title": "Maalinta 23aad: Suuqgeynta Xirfadahaaga (Freelancing)",
+    "description": "Sida aad ugu shaqaysan karto xirfadahan cusub ee AI iyo Automation-ka.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "24": {
+    "title": "Maalinta 24aad: Dhisida Boortfolio (Portfolio)",
+    "description": "Isku ururi shaqooyinkaagii ugu fiicnaa si aad macaamiil ugu hesho.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "25": {
+    "title": "Maalinta 25aad: Tijaabada Mashruuca Lahaanshaha (Final Project)",
+    "description": "Bilow mashruucaaga qalin-jabinta ee xallinaya dhibaato dhab ah.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "26": {
+    "title": "Maalinta 26aad: Dib u eegis iyo Talo Siin",
+    "description": "Horumari mashruucaaga oo hel talooyin.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "27": {
+    "title": "Maalinta 27aad: Bixinta Mashruuca (Deployment)",
+    "description": "Sida mashruucaaga Live looga dhigo si dunida u aragto.",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  },
+  "28": {
+    "title": "Maalinta 28aad: Qalin Jabin iyo Shahaado",
+    "description": "Hambalyo! Hadda waxaad tahay khabiir AI Automation iyo Bot sameeye ah. Sii wad barashada!",
+    "resource_link": "Geli_Linkiga_Google_Drive_Halkan"
+  }
+}

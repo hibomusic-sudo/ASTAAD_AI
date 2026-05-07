@@ -28,7 +28,7 @@ class GetDailyLessonTool(BaseTool):
             )
             
         # Load the curriculum JSON file
-        curriculum_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "data", "tutorbot", "ai_rage", "curriculum_28_days.json")
+        curriculum_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "curriculum_28_days.json")
         try:
             with open(curriculum_path, 'r', encoding='utf-8') as f:
                 curriculum_data = json.load(f)
