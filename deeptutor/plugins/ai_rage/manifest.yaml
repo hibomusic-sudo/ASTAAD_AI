@@ -1,0 +1,5 @@
+name: ai_rage
+version: 0.1.0
+type: playground
+description: "AI Rage Learning Companion (Somali Language)"
+stages: ["thinking", "acting", "observing", "responding"]

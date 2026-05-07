@@ -9,6 +9,7 @@ from typing import Any
 
 from deeptutor.core.tool_protocol import BaseTool, ToolDefinition, ToolParameter, ToolResult
 from deeptutor.tools.prompting import load_prompt_hints
+from deeptutor.tools.builtin.schedule import ScheduleTool, ClassworkTool
 
 logger = logging.getLogger(__name__)
 
@@ -498,6 +499,8 @@ class GeoGebraAnalysisTool(_PromptHintsMixin, BaseTool):
         )
 
 
+from deeptutor.plugins.ai_rage.tools import CommunityLinksTool
+
 BUILTIN_TOOL_TYPES: tuple[type[BaseTool], ...] = (
     BrainstormTool,
     RAGTool,
@@ -506,6 +509,9 @@ BUILTIN_TOOL_TYPES: tuple[type[BaseTool], ...] = (
     ReasonTool,
     PaperSearchToolWrapper,
     GeoGebraAnalysisTool,
+    ScheduleTool,
+    ClassworkTool,
+    CommunityLinksTool,
 )
 
 BUILTIN_TOOL_NAMES: tuple[str, ...] = tuple(tool_type().name for tool_type in BUILTIN_TOOL_TYPES)
@@ -529,4 +535,7 @@ __all__ = [
     "RAGTool",
     "ReasonTool",
     "WebSearchTool",
+    "ScheduleTool",
+    "ClassworkTool",
+    "CommunityLinksTool",
 ]

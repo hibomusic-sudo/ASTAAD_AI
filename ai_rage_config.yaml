@@ -1,0 +1,30 @@
+# ai_rage_config.yaml
+# Example Configuration for DeepTutor TutorBot running the AI Rage Capability
+
+tutorbot:
+  # Enable the Telegram Channel
+  telegram:
+    enabled: true
+    token: "8063445113:AAF6t8EdStwNXvZW6C8vWiGaixups6odkTA"
+    reply_to_message: true
+
+  # Enable the Facebook Messenger Channel
+  facebook:
+    enabled: true
+    page_access_token: "YOUR_FACEBOOK_PAGE_ACCESS_TOKEN_HERE"
+    verify_token: "YOUR_WEBHOOK_VERIFY_TOKEN"
+    webhook_port: 8080
+    webhook_path: "/webhook/facebook"
+
+  agent:
+    # Set the default capability to our new AI Rage plugin
+    default_capability: "ai_rage"
+
+    # Set up Knowledge Base (RAG) for the tutorials
+    knowledge_base:
+      default_kb: "ai_rage_tutorials"
+      
+# Usage:
+# 1. Add your Telegram token and Facebook page token.
+# 2. Run the tutorbot engine with this config:
+#    deeptutor serve --config ai_rage_config.yaml

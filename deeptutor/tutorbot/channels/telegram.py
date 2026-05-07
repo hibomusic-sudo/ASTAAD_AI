@@ -395,6 +395,18 @@ class TelegramChannel(BaseChannel):
         # Send text content
         if msg.content and msg.content != "[empty message]":
             is_progress = msg.metadata.get("_progress", False)
+            
+            # Extract and build Telegram ReplyMarkup if present in metadata
+            reply_markup_dict = msg.metadata.get("reply_markup")
+            if reply_markup_dict and "inline_keyboard" in reply_markup_dict:
+                from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+                keyboard = [
+                    [InlineKeyboardButton(text=btn["text"], url=btn.get("url"), callback_data=btn.get("callback_data")) for btn in row]
+                    for row in reply_markup_dict["inline_keyboard"]
+                ]
+                if thread_kwargs is None:
+                    thread_kwargs = {}
+                thread_kwargs["reply_markup"] = InlineKeyboardMarkup(keyboard)
 
             for chunk in split_message(msg.content, TELEGRAM_MAX_MESSAGE_LEN):
                 # Final response: simulate streaming via draft, then persist
