@@ -179,6 +179,34 @@ def _ensure_essential_settings(path_service) -> None:
     agents_file = path_service.get_runtime_config_file("agents")
     _write_yaml_if_missing(agents_file, DEFAULT_AGENTS_SETTINGS)
 
+    # Auto-initialize AI Rage bot configuration for Telegram
+    try:
+        import os
+        bot_dir = path_service.project_root / "data" / "tutorbot" / "ai_rage"
+        bot_config_file = bot_dir / "config.yaml"
+        
+        # Read the Telegram token from the environment variable (if set in .env),
+        # otherwise fallback to the user's hardcoded token for this specific deployment.
+        telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
+        if not telegram_token:
+            telegram_token = "8063445113:AAEBjsGs3DoN2ZnLAQj-nA2ohW_hYYf-Tw0"
+            
+        ai_rage_config = {
+            "auto_start": True,
+            "name": "ai_rage",
+            "channels": {
+                "telegram": {
+                    "enabled": True,
+                    "allow_from": ["*"],
+                    "reply_to_message": True,
+                    "token": telegram_token
+                }
+            }
+        }
+        _write_yaml_if_missing(bot_config_file, ai_rage_config)
+    except Exception as e:
+        _get_setup_logger().warning(f"Failed to initialize ai_rage config: {e}")
+
 
 def _write_json_if_missing(file_path: Path, payload: dict) -> None:
     """Write JSON defaults once; never overwrite user-managed files."""
