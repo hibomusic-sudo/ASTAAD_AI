@@ -46,6 +46,8 @@ class ChannelManager:
 
         for name, cls in discover_all().items():
             section = getattr(self.channels_config, name, None)
+            if section is None and hasattr(self.channels_config, "model_extra") and self.channels_config.model_extra:
+                section = self.channels_config.model_extra.get(name)
             if section is None:
                 continue
             enabled = (
