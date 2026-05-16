@@ -179,21 +179,21 @@ def _ensure_essential_settings(path_service) -> None:
     agents_file = path_service.get_runtime_config_file("agents")
     _write_yaml_if_missing(agents_file, DEFAULT_AGENTS_SETTINGS)
 
-    # Auto-initialize AI Rage bot configuration for Telegram
+    # Auto-initialize jilciyebot configuration for Telegram
     try:
         import os
-        bot_dir = path_service.project_root / "data" / "tutorbot" / "ai_rage"
+        bot_dir = path_service.project_root / "data" / "tutorbot" / "jilciyebot"
         bot_config_file = bot_dir / "config.yaml"
         
         # Read the Telegram token from the environment variable (if set in .env),
         # otherwise fallback to the user's hardcoded token for this specific deployment.
         telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
         if not telegram_token:
-            telegram_token = "8063445113:AAEBjsGs3DoN2ZnLAQj-nA2ohW_hYYf-Tw0"
+            telegram_token = "8063445113:AAH_laf-3OkoHHFAYfzeVgMG_-asVRI14V4"
             
-        ai_rage_config = {
+        jilciyebot_config = {
             "auto_start": True,
-            "name": "ai_rage",
+            "name": "jilciyebot",
             "channels": {
                 "telegram": {
                     "enabled": True,
@@ -203,9 +203,9 @@ def _ensure_essential_settings(path_service) -> None:
                 }
             }
         }
-        _write_yaml_if_missing(bot_config_file, ai_rage_config)
+        _write_yaml_if_missing(bot_config_file, jilciyebot_config)
     except Exception as e:
-        _get_setup_logger().warning(f"Failed to initialize ai_rage config: {e}")
+        _get_setup_logger().warning(f"Failed to initialize jilciyebot config: {e}")
 
 
 def _write_json_if_missing(file_path: Path, payload: dict) -> None:
