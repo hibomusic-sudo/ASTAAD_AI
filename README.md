@@ -1,81 +1,62 @@
-# AI Rage - Somali Educational AI Platform 🚀
+# JilciyeBot - AI Somali Learning Hub (ASL) 🚀
 
-Welcome to the **AI Rage** repository! This project is an advanced, AI-driven educational platform built on top of the open-source **DeepTutor** framework. It is specifically designed to provide high-quality tutoring and guidance to Somali students in their native language, focusing on **Vibe Coding, AI Automation, Video Editing, and Basic Programming**.
+Kusoo dhowoow kaydka (Repository) rasmiga ah ee **JilciyeBot**! Mashruucani waa Bot waxbarasho oo casri ah oo ku shaqeeya sirdoonka macmalka ah (AI), kaas oo loogu talagalay inuu dhalinyarada iyo ganacsatada Soomaaliyeed barto **AI iyo Chatbot Automation**. Bot-kan waxaa awooda siiya nidaamka furan ee **DeepTutor**.
 
-## 🌟 Key Features
+## 🌟 Tilmaamaha Muhiimka ah (Key Features)
+- **JilciyeBot Persona**: Bot ku hadla af-Soomaali dhiirigelin leh, kaas oo bixiya koorsooyin bilaash ah (ilaa 2028).
+- **Koorsooyinka Uu Bixiyo**:
+  - WhatsApp, Telegram, Messenger, & Instagram Automation Bots.
+  - AI Video Editing, AI Web Design, iyo AI ChatGPT Data Writing.
+- **Telegram Menu Cusub**: Bot-ku wuxuu wataa Menu (Badhamo) casri ah oo u sahlayo ardayga inuu doorto:
+  - 👨‍💻 La Hadal Dadka
+  - 🤖 La Hadal AI
+  - 📝 Isqor (Register)
 
-- **Somali-Native AI Agent**: A custom-tailored LLM persona ("AI Rage") that communicates flawlessly in Somali, maintaining a respectful, engaging, and professional teaching style.
-- **Multi-Channel Integration**: Chat with the bot natively across popular platforms without downloading a new app:
-  - 📱 Telegram Bot
-  - 💬 Facebook Messenger
-- **Automated Curriculum & Knowledge Base (RAG)**: Uses Retrieval-Augmented Generation (RAG) to fetch course materials from PDFs, Youtube Transcripts, Loom Videos, and Whop lessons, ensuring students get accurate, curriculum-specific answers without hallucinations.
-- **Interactive Course Navigation**: The bot presents students with Native Telegram Menus/Buttons to easily navigate between courses, quizzes, and community groups.
-- **Smart Quiz Evaluator**: Automatically assesses student quiz results and distributes the correct VIP group links upon successful graduation.
-- **Scheduled Broadcasting (Cron)**: Automated weekly schedule announcements to keep students on track with their classes.
+## ☁️ Xaggee Buu Ku Kaydsan Yahay Mashruucan?
+Mashruucan wuxuu si rasmi ah ugu kaydsan yahay **Saddex (3) Meelood**:
+1. **GitHub (Halkan):** Waa meesha koodhka rasmiga ah (Source Code) uu yaallo oo laga akhriyo.
+2. **Kombuyuutarkaaga (Local VSCode):** Waa meesha aad koodhka ku bedesho oo aad tijaabada ku samayso.
+3. **Google Cloud VPS (Live Server):** Waa meesha uu Bot-ku si dhab ah uga shaqeeyo **24/7** isagoo isticmaalaya Docker!
 
-## 🔗 Supported Communities & Courses
+---
 
-AI Rage seamlessly connects students to our vibrant communities based on their learning paths:
-*   **AI BOT (Automation) 4 Days Course**
-*   **AI Video Editing Mastery**
-*   **Fasalka Barashada AI**
-*   **Loom & Himbomusic Workspaces**
+## 🛠 Sida Loo Kiciyo (How to Run)
 
-## ⚙️ Technical Architecture
-
-AI Rage is built as a **Level 2 Capability Plugin** inside the DeepTutor agent-native architecture:
-
-```text
-DeepTutor Engine
-├── Capabilities (Multi-step Agent Pipelines)
-│   └── AI Rage (Custom Somali Persona & Tools)
-│       ├── CommunityLinksTool (Interactive UI)
-│       ├── ScheduleTool (CRUD Class Management)
-│       └── ClassworkTool (Course Management)
-├── Tools (Level 1)
-│   └── RAG (Knowledge Base Retrieval)
-└── Channels
-    ├── Telegram (Long-polling, Inline Keyboards)
-    └── Facebook (Webhook)
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Python 3.11 or higher
-- Git
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <your-repo-url>
-   cd DeepTutor
+### 1. Sida Loo Kiciyo Kombuyuutarkaaga (Local Testing)
+Haddii aad rabto inaad koodhka ku tijaabiso kombuyuutarkaaga, raac tillaabooyinkan:
+1. Hubi in faylka sirta ah ee `.env` uu ku jiro galka ugu weyn (Root folder), uuna ku qoran yahay furahaaga (API Key):
+   ```env
+   LLM_BINDING=openai
+   LLM_MODEL=deepseek-chat
+   LLM_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxx
+   LLM_HOST=https://api.deepseek.com/v1
    ```
-
-2. Install dependencies:
-   ```bash
-   pip install -e ".[tutorbot]"
-   ```
-
-3. Setup Environment Variables:
-   Create a `.env` file in the root directory and add your LLM API keys (e.g., `OPENAI_API_KEY`, `DEEPSEEK_API_KEY`).
-
-4. Configure the Bot:
-   Edit `data/tutorbot/ai_rage/config.yaml` to include your Telegram Token and Facebook Webhook tokens.
-
-5. Run the Server:
+2. Terminal-ka VSCode-ka ku dhufo amarkan:
    ```bash
    python -m deeptutor_cli.main serve
    ```
-   The bot will automatically connect to Telegram and start listening for messages!
+*(Fiiro Gaar ah: Haddii uu ku yiraahdo "no-key", macnaheedu waa inaadan haysan faylka `.env` ama aadan dib u kicin Server-ka markaad ku dartay kadib!)*
 
-## 🎓 Ingestion (Adding Course Materials)
+### 2. Sida Loo Saaro Live Server-ka (Google Cloud VPS Deployment)
+Markaad koodhka wax ka bedesho kombuyuutarkaaga, raac 2-dan tallaabo si aad u geyso Server-ka Cloud-ka ee Google:
 
-To add new PDFs or lessons to the AI's brain (RAG):
+**Tallaabada A (Gudaha VSCode-kaaga):**
 ```bash
-python -m deeptutor_cli.main kb create ai_rage_tutorials --doc path/to/your/lesson.pdf
+git add .
+git commit -m "Updated bot code"
+git push origin main
 ```
 
+**Tallaabada B (Gudaha Cloud Shell / SSH):**
+Fur Google Cloud Console, ku dhufo badhanka **SSH** ee ku yaalla Server-kaaga (`ustaadcaawiye`), kadibna ku dhufo amarradan:
+```bash
+cd ~/ASTAAD_AI
+git pull origin main
+sudo rm -f data/tutorbot/jilciyebot/config.yaml
+sudo docker compose restart deeptutor
+```
+
+*(Hubi in faylka `.env` uu sidoo kale u dhex yaallo Server-kaaga Cloud-ka ah, haddii kale Cloud-ku wuxuu ku siinayaa qaladka "no-key").*
+
 ---
-*Built with ❤️ for the Somali Tech Community.*
+*Waxaa lagu dhisay ❤️ & 🤖 bulshada Soomaaliyeed.*
