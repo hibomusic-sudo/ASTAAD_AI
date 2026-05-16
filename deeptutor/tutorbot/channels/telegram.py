@@ -421,13 +421,8 @@ class TelegramChannel(BaseChannel):
                 msg.content = msg.content.replace("[SHOW_MAIN_MENU]", "").strip()
                 reply_markup_dict = {
                     "keyboard": [
-                        [{"text": "📢 Channels"}, {"text": "👥 Groups"}],
-                        [{"text": "🤖 AI Chat"}, {"text": "☘️ Learn AI"}],
-                        [{"text": "📥 Broadcast"}, {"text": "⏰ Schedule"}],
-                        [{"text": "👤 Profile"}, {"text": "⚙️ Settings"}],
-                        [{"text": "👨‍💻 Talk to Person"}, {"text": "❓ More Info"}],
-                        [{"text": "🌐 Website"}],
-                        [{"text": "📝 Isqor Ama Register"}]
+                        [{"text": "👨‍💻 La Hadal Dadka"}, {"text": "🤖 La Hadal AI"}],
+                        [{"text": "📝 Isqor (Register)"}]
                     ],
                     "resize_keyboard": True
                 }
@@ -522,13 +517,8 @@ class TelegramChannel(BaseChannel):
 
         from telegram import ReplyKeyboardMarkup, KeyboardButton
         keyboard = [
-            [KeyboardButton("📢 Channels"), KeyboardButton("👥 Groups")],
-            [KeyboardButton("🤖 AI Chat"), KeyboardButton("☘️ Learn AI")],
-            [KeyboardButton("📥 Broadcast"), KeyboardButton("⏰ Schedule")],
-            [KeyboardButton("👤 Profile"), KeyboardButton("⚙️ Settings")],
-            [KeyboardButton("👨‍💻 Talk to Person"), KeyboardButton("❓ More Info")],
-            [KeyboardButton("🌐 Website")],
-            [KeyboardButton("📝 Isqor Ama Register")]
+            [KeyboardButton("👨‍💻 La Hadal Dadka"), KeyboardButton("🤖 La Hadal AI")],
+            [KeyboardButton("📝 Isqor (Register)")]
         ]
         reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
